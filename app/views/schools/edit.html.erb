@@ -1,0 +1,15 @@
+<h1>Edit <%= @school.full_name %></h1>
+
+<%= form_for @school do |f| %>
+  <div>
+    <%= f.label :full_name %>
+    <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
+  </div>
+
+  <div>
+    <%= f.label :abbreviation %>
+    <%= f.text_field :abbreviation, placeholder: "Abbreviation", required: true %>
+  </div>
+
+  <%= f.submit %>
+<% end %>

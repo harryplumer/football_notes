@@ -1,0 +1,22 @@
+<h1><%= @school.full_name %></h1>
+<h3>Notes</h3>
+<table>
+  <thead>
+    <tr><th>Week</th><th>Note</th><th>Edit</th><th>Delete</th></tr>
+  </thead>
+  <tbody>
+    <% @school.notes.each do |note| %>
+      <tr>
+        <td><%= note.week %></td>
+        <td><%= note.body %></td>
+        <td><%= link_to 'Edit', edit_school_note_path(@school, note) %></td>
+        <td><%= link_to 'Delete', school_note_path(@school, note), method: :delete %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Add New Note', new_school_note_path(@school) %>
+<br>
+<%= link_to 'Back to list', schools_path %>
+  
+

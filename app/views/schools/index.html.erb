@@ -1,0 +1,12 @@
+<h1>This is your list of schools:</h1>
+<table>
+  <% @schools.each do |school| %>
+    <tr>
+      <td><%= school.full_name %></td>
+      <td><%= link_to 'Show', school_path(school)%></td>
+      <td><%= link_to 'Edit', edit_school_path(school) %></td>
+      <td><%= link_to 'Delete', school_path(school), method: :delete %></td>
+    </tr>
+  <% end %>
+<table>
+<%= link_to "Add New School", new_school_path %>
